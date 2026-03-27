@@ -18,16 +18,13 @@
   <a target="code" href="///C:/Users/renzo/Documents/screen_touch_controls/actionOverlay.py" type="text/plain"><tt>actionOverlay.py</tt></a>
 <span class="moduletype">Script</span>  <div class="import">
 imports:
-    <a href="#PyQt5.QtCore">PyQt5.QtCore</a>
- &#8226;   <a href="#PyQt5.QtGui">PyQt5.QtGui</a>
- &#8226;   <a href="#PyQt5.QtWidgets">PyQt5.QtWidgets</a>
+    <a href="#PyQt5.QtWidgets">PyQt5.QtWidgets</a>
  &#8226;   <a href="#_collections_abc">_collections_abc</a>
  &#8226;   <a href="#_weakrefset">_weakrefset</a>
  &#8226;   <a href="#abc">abc</a>
  &#8226;   <a href="#codecs">codecs</a>
  &#8226;   <a href="#collections">collections</a>
  &#8226;   <a href="#copyreg">copyreg</a>
- &#8226;   <a href="#datetime">datetime</a>
  &#8226;   <a href="#encodings">encodings</a>
  &#8226;   <a href="#encodings.aliases">encodings.aliases</a>
  &#8226;   <a href="#encodings.ascii">encodings.ascii</a>
@@ -158,12 +155,11 @@ imports:
  &#8226;   <a href="#keyword">keyword</a>
  &#8226;   <a href="#linecache">linecache</a>
  &#8226;   <a href="#locale">locale</a>
- &#8226;   <a href="#notifypy">notifypy</a>
  &#8226;   <a href="#ntpath">ntpath</a>
  &#8226;   <a href="#operator">operator</a>
  &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#overlay_button">overlay_button</a>
  &#8226;   <a href="#posixpath">posixpath</a>
- &#8226;   <a href="#pyautogui">pyautogui</a>
  &#8226;   <a href="#pyi_rth__tkinter.py">pyi_rth__tkinter.py</a>
  &#8226;   <a href="#pyi_rth_inspect.py">pyi_rth_inspect.py</a>
  &#8226;   <a href="#pyi_rth_multiprocessing.py">pyi_rth_multiprocessing.py</a>
@@ -186,8 +182,6 @@ imports:
  &#8226;   <a href="#types">types</a>
  &#8226;   <a href="#warnings">warnings</a>
  &#8226;   <a href="#weakref">weakref</a>
- &#8226;   <a href="#win32con">win32con</a>
- &#8226;   <a href="#win32gui">win32gui</a>
 
   </div>
 
@@ -454,17 +448,6 @@ imported by:
 <span class="moduletype">MissingModule</span>  <div class="import">
 imported by:
     <a href="#platform">platform</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="'jeepney.io'"></a>
-  <a target="code" href="" type="text/plain"><tt>'jeepney.io'</tt></a>
-<span class="moduletype">MissingModule</span>  <div class="import">
-imported by:
-    <a href="#notifypy.os_notifiers.linux">notifypy.os_notifiers.linux</a>
 
   </div>
 
@@ -3058,7 +3041,9 @@ imported by:
     <a href="#PyQt5">PyQt5</a>
  &#8226;   <a href="#PyQt5.QtGui">PyQt5.QtGui</a>
  &#8226;   <a href="#PyQt5.QtWidgets">PyQt5.QtWidgets</a>
- &#8226;   <a href="#actionOverlay.py">actionOverlay.py</a>
+ &#8226;   <a href="#buttons">buttons</a>
+ &#8226;   <a href="#drawing_window">drawing_window</a>
+ &#8226;   <a href="#overlay_button">overlay_button</a>
 
   </div>
 
@@ -3080,7 +3065,10 @@ imports:
 imported by:
     <a href="#PyQt5">PyQt5</a>
  &#8226;   <a href="#PyQt5.QtWidgets">PyQt5.QtWidgets</a>
- &#8226;   <a href="#actionOverlay.py">actionOverlay.py</a>
+ &#8226;   <a href="#application_manager">application_manager</a>
+ &#8226;   <a href="#buttons">buttons</a>
+ &#8226;   <a href="#drawing_window">drawing_window</a>
+ &#8226;   <a href="#overlay_button">overlay_button</a>
 
   </div>
 
@@ -3103,6 +3091,10 @@ imported by:
     <a href="#PyQt5.QtCore">PyQt5.QtCore</a>
  &#8226;   <a href="#PyQt5.QtGui">PyQt5.QtGui</a>
  &#8226;   <a href="#actionOverlay.py">actionOverlay.py</a>
+ &#8226;   <a href="#application_manager">application_manager</a>
+ &#8226;   <a href="#buttons">buttons</a>
+ &#8226;   <a href="#drawing_window">drawing_window</a>
+ &#8226;   <a href="#overlay_button">overlay_button</a>
  &#8226;   <a href="#pyperclip">pyperclip</a>
 
   </div>
@@ -5063,16 +5055,6 @@ imported by:
 </div>
 
 <div class="node">
-  <a name="_uuid"></a>
-  <tt>_uuid</tt> <span class="moduletype"><tt>C:\Users\renzo\AppData\Local\Programs\Python\Python313\DLLs\_uuid.pyd</tt></span>  <div class="import">
-imported by:
-    <a href="#uuid">uuid</a>
-
-  </div>
-
-</div>
-
-<div class="node">
   <a name="_warnings"></a>
   <tt>_warnings</tt> <span class="moduletype"><i>(builtin module)</i></span>  <div class="import">
 imported by:
@@ -5204,22 +5186,30 @@ imported by:
 </div>
 
 <div class="node">
-  <a name="aiocontextvars"></a>
-  <a target="code" href="" type="text/plain"><tt>aiocontextvars</tt></a>
+  <a name="android"></a>
+  <a target="code" href="" type="text/plain"><tt>android</tt></a>
 <span class="moduletype">MissingModule</span>  <div class="import">
 imported by:
-    <a href="#loguru._contextvars">loguru._contextvars</a>
+    <a href="#setuptools._vendor.platformdirs.android">setuptools._vendor.platformdirs.android</a>
 
   </div>
 
 </div>
 
 <div class="node">
-  <a name="android"></a>
-  <a target="code" href="" type="text/plain"><tt>android</tt></a>
-<span class="moduletype">MissingModule</span>  <div class="import">
+  <a name="application_manager"></a>
+  <a target="code" href="///C:/Users/renzo/Documents/screen_touch_controls/application_manager.py" type="text/plain"><tt>application_manager</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#PyQt5.QtGui">PyQt5.QtGui</a>
+ &#8226;   <a href="#PyQt5.QtWidgets">PyQt5.QtWidgets</a>
+ &#8226;   <a href="#win32con">win32con</a>
+ &#8226;   <a href="#win32gui">win32gui</a>
+
+  </div>
+  <div class="import">
 imported by:
-    <a href="#setuptools._vendor.platformdirs.android">setuptools._vendor.platformdirs.android</a>
+    <a href="#overlay_button">overlay_button</a>
 
   </div>
 
@@ -5259,7 +5249,6 @@ imported by:
  &#8226;   <a href="#tarfile">tarfile</a>
  &#8226;   <a href="#tokenize">tokenize</a>
  &#8226;   <a href="#unittest.main">unittest.main</a>
- &#8226;   <a href="#uuid">uuid</a>
  &#8226;   <a href="#webbrowser">webbrowser</a>
  &#8226;   <a href="#zipfile">zipfile</a>
 
@@ -5391,8 +5380,6 @@ imported by:
  &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
  &#8226;   <a href="#asyncio.windows_events">asyncio.windows_events</a>
  &#8226;   <a href="#asyncio.windows_utils">asyncio.windows_utils</a>
- &#8226;   <a href="#loguru._asyncio_loop">loguru._asyncio_loop</a>
- &#8226;   <a href="#loguru._simple_sinks">loguru._simple_sinks</a>
  &#8226;   <a href="#unittest.async_case">unittest.async_case</a>
  &#8226;   <a href="#unittest.mock">unittest.mock</a>
 
@@ -6269,9 +6256,7 @@ imported by:
 imported by:
     <a href="#PIL.Image">PIL.Image</a>
  &#8226;   <a href="#_pyi_rth_utils.qt">_pyi_rth_utils.qt</a>
- &#8226;   <a href="#colorama.initialise">colorama.initialise</a>
  &#8226;   <a href="#logging">logging</a>
- &#8226;   <a href="#loguru">loguru</a>
  &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
  &#8226;   <a href="#multiprocessing.popen_fork">multiprocessing.popen_fork</a>
  &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
@@ -6429,8 +6414,6 @@ imported by:
  &#8226;   <a href="#gzip">gzip</a>
  &#8226;   <a href="#inspect">inspect</a>
  &#8226;   <a href="#locale">locale</a>
- &#8226;   <a href="#loguru._better_exceptions">loguru._better_exceptions</a>
- &#8226;   <a href="#loguru._logger">loguru._logger</a>
  &#8226;   <a href="#lzma">lzma</a>
  &#8226;   <a href="#numpy._core.numeric">numpy._core.numeric</a>
  &#8226;   <a href="#numpy._core.numerictypes">numpy._core.numerictypes</a>
@@ -6455,6 +6438,24 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="buttons"></a>
+  <a target="code" href="///C:/Users/renzo/Documents/screen_touch_controls/buttons.py" type="text/plain"><tt>buttons</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#PyQt5.QtCore">PyQt5.QtCore</a>
+ &#8226;   <a href="#PyQt5.QtGui">PyQt5.QtGui</a>
+ &#8226;   <a href="#PyQt5.QtWidgets">PyQt5.QtWidgets</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#overlay_button">overlay_button</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="bz2"></a>
   <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/bz2.py" type="text/plain"><tt>bz2</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
@@ -6470,7 +6471,6 @@ imports:
 imported by:
     <a href="#encodings.bz2_codec">encodings.bz2_codec</a>
  &#8226;   <a href="#fileinput">fileinput</a>
- &#8226;   <a href="#loguru._file_sink">loguru._file_sink</a>
  &#8226;   <a href="#numpy.lib._datasource">numpy.lib._datasource</a>
  &#8226;   <a href="#setuptools._vendor.backports.tarfile">setuptools._vendor.backports.tarfile</a>
  &#8226;   <a href="#shutil">shutil</a>
@@ -6501,7 +6501,6 @@ imported by:
  &#8226;   <a href="#_strptime">_strptime</a>
  &#8226;   <a href="#email._parseaddr">email._parseaddr</a>
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
- &#8226;   <a href="#loguru._datetime">loguru._datetime</a>
  &#8226;   <a href="#ssl">ssl</a>
 
   </div>
@@ -6699,7 +6698,6 @@ imported by:
  &#8226;   <a href="#encodings.uu_codec">encodings.uu_codec</a>
  &#8226;   <a href="#encodings.zlib_codec">encodings.zlib_codec</a>
  &#8226;   <a href="#json">json</a>
- &#8226;   <a href="#notifypy.os_notifiers.windows">notifypy.os_notifiers.windows</a>
  &#8226;   <a href="#numpy.f2py.crackfortran">numpy.f2py.crackfortran</a>
  &#8226;   <a href="#pickle">pickle</a>
  &#8226;   <a href="#plistlib">plistlib</a>
@@ -6776,8 +6774,6 @@ imported by:
  &#8226;   <a href="#importlib.metadata._collections">importlib.metadata._collections</a>
  &#8226;   <a href="#importlib.resources.readers">importlib.resources.readers</a>
  &#8226;   <a href="#inspect">inspect</a>
- &#8226;   <a href="#loguru._logger">loguru._logger</a>
- &#8226;   <a href="#loguru._recattrs">loguru._recattrs</a>
  &#8226;   <a href="#multiprocessing.heap">multiprocessing.heap</a>
  &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
  &#8226;   <a href="#multiprocessing.queues">multiprocessing.queues</a>
@@ -6831,131 +6827,6 @@ imported by:
 imported by:
     <a href="#collections">collections</a>
  &#8226;   <a href="#pyautogui">pyautogui</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="colorama"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/colorama/__init__.py" type="text/plain"><tt>colorama</tt></a>
-<span class="moduletype">Package</span>  <div class="import">
-imports:
-    <a href="#colorama">colorama</a>
- &#8226;   <a href="#colorama.ansi">colorama.ansi</a>
- &#8226;   <a href="#colorama.ansitowin32">colorama.ansitowin32</a>
- &#8226;   <a href="#colorama.initialise">colorama.initialise</a>
- &#8226;   <a href="#colorama.win32">colorama.win32</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#colorama">colorama</a>
- &#8226;   <a href="#colorama.ansi">colorama.ansi</a>
- &#8226;   <a href="#colorama.ansitowin32">colorama.ansitowin32</a>
- &#8226;   <a href="#colorama.initialise">colorama.initialise</a>
- &#8226;   <a href="#colorama.win32">colorama.win32</a>
- &#8226;   <a href="#colorama.winterm">colorama.winterm</a>
- &#8226;   <a href="#loguru._colorama">loguru._colorama</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="colorama.ansi"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/colorama/ansi.py" type="text/plain"><tt>colorama.ansi</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#colorama">colorama</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#colorama">colorama</a>
- &#8226;   <a href="#colorama.ansitowin32">colorama.ansitowin32</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="colorama.ansitowin32"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/colorama/ansitowin32.py" type="text/plain"><tt>colorama.ansitowin32</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#colorama">colorama</a>
- &#8226;   <a href="#colorama.ansi">colorama.ansi</a>
- &#8226;   <a href="#colorama.win32">colorama.win32</a>
- &#8226;   <a href="#colorama.winterm">colorama.winterm</a>
- &#8226;   <a href="#os">os</a>
- &#8226;   <a href="#re">re</a>
- &#8226;   <a href="#sys">sys</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#colorama">colorama</a>
- &#8226;   <a href="#colorama.initialise">colorama.initialise</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="colorama.initialise"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/colorama/initialise.py" type="text/plain"><tt>colorama.initialise</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#atexit">atexit</a>
- &#8226;   <a href="#colorama">colorama</a>
- &#8226;   <a href="#colorama.ansitowin32">colorama.ansitowin32</a>
- &#8226;   <a href="#contextlib">contextlib</a>
- &#8226;   <a href="#sys">sys</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#colorama">colorama</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="colorama.win32"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/colorama/win32.py" type="text/plain"><tt>colorama.win32</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#colorama">colorama</a>
- &#8226;   <a href="#ctypes">ctypes</a>
- &#8226;   <a href="#ctypes.wintypes">ctypes.wintypes</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#colorama">colorama</a>
- &#8226;   <a href="#colorama.ansitowin32">colorama.ansitowin32</a>
- &#8226;   <a href="#colorama.winterm">colorama.winterm</a>
- &#8226;   <a href="#loguru._colorama">loguru._colorama</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="colorama.winterm"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/colorama/winterm.py" type="text/plain"><tt>colorama.winterm</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#colorama">colorama</a>
- &#8226;   <a href="#colorama.win32">colorama.win32</a>
- &#8226;   <a href="#msvcrt">msvcrt</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#colorama.ansitowin32">colorama.ansitowin32</a>
 
   </div>
 
@@ -7137,7 +7008,6 @@ imported by:
  &#8226;   <a href="#ast">ast</a>
  &#8226;   <a href="#asyncio.staggered">asyncio.staggered</a>
  &#8226;   <a href="#bdb">bdb</a>
- &#8226;   <a href="#colorama.initialise">colorama.initialise</a>
  &#8226;   <a href="#configparser">configparser</a>
  &#8226;   <a href="#getpass">getpass</a>
  &#8226;   <a href="#glob">glob</a>
@@ -7146,7 +7016,6 @@ imported by:
  &#8226;   <a href="#importlib.resources._adapters">importlib.resources._adapters</a>
  &#8226;   <a href="#importlib.resources._common">importlib.resources._common</a>
  &#8226;   <a href="#importlib.resources.readers">importlib.resources.readers</a>
- &#8226;   <a href="#loguru._logger">loguru._logger</a>
  &#8226;   <a href="#numpy._core._methods">numpy._core._methods</a>
  &#8226;   <a href="#numpy._core._ufunc_config">numpy._core._ufunc_config</a>
  &#8226;   <a href="#numpy._core.arrayprint">numpy._core.arrayprint</a>
@@ -7212,7 +7081,6 @@ imported by:
  &#8226;   <a href="#asyncio.runners">asyncio.runners</a>
  &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
  &#8226;   <a href="#asyncio.threads">asyncio.threads</a>
- &#8226;   <a href="#loguru._contextvars">loguru._contextvars</a>
  &#8226;   <a href="#numpy._core._ufunc_config">numpy._core._ufunc_config</a>
  &#8226;   <a href="#numpy._core.printoptions">numpy._core.printoptions</a>
  &#8226;   <a href="#unittest.async_case">unittest.async_case</a>
@@ -7324,7 +7192,6 @@ imported by:
     <a href="#_ios_support">_ios_support</a>
  &#8226;   <a href="#_pyrepl._minimal_curses">_pyrepl._minimal_curses</a>
  &#8226;   <a href="#_pyrepl.windows_console">_pyrepl.windows_console</a>
- &#8226;   <a href="#colorama.win32">colorama.win32</a>
  &#8226;   <a href="#ctypes._aix">ctypes._aix</a>
  &#8226;   <a href="#ctypes._endian">ctypes._endian</a>
  &#8226;   <a href="#ctypes.macholib">ctypes.macholib</a>
@@ -7348,7 +7215,6 @@ imported by:
  &#8226;   <a href="#setuptools._vendor.wheel.vendored.packaging._manylinux">setuptools._vendor.wheel.vendored.packaging._manylinux</a>
  &#8226;   <a href="#setuptools.windows_support">setuptools.windows_support</a>
  &#8226;   <a href="#webbrowser">webbrowser</a>
- &#8226;   <a href="#win32_setctime._setctime">win32_setctime._setctime</a>
 
   </div>
 
@@ -7504,12 +7370,10 @@ imports:
   <div class="import">
 imported by:
     <a href="#_pyrepl.windows_console">_pyrepl.windows_console</a>
- &#8226;   <a href="#colorama.win32">colorama.win32</a>
  &#8226;   <a href="#pyautogui._pyautogui_win">pyautogui._pyautogui_win</a>
  &#8226;   <a href="#pygetwindow._pygetwindow_win">pygetwindow._pygetwindow_win</a>
  &#8226;   <a href="#pyperclip">pyperclip</a>
  &#8226;   <a href="#setuptools.windows_support">setuptools.windows_support</a>
- &#8226;   <a href="#win32_setctime._setctime">win32_setctime._setctime</a>
 
   </div>
 
@@ -7616,14 +7480,10 @@ imported by:
  &#8226;   <a href="#PyQt5.QtGui">PyQt5.QtGui</a>
  &#8226;   <a href="#PyQt5.QtWidgets">PyQt5.QtWidgets</a>
  &#8226;   <a href="#_strptime">_strptime</a>
- &#8226;   <a href="#actionOverlay.py">actionOverlay.py</a>
  &#8226;   <a href="#calendar">calendar</a>
  &#8226;   <a href="#email.utils">email.utils</a>
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
  &#8226;   <a href="#http.server">http.server</a>
- &#8226;   <a href="#loguru._datetime">loguru._datetime</a>
- &#8226;   <a href="#loguru._file_sink">loguru._file_sink</a>
- &#8226;   <a href="#loguru._string_parsers">loguru._string_parsers</a>
  &#8226;   <a href="#mouseinfo">mouseinfo</a>
  &#8226;   <a href="#plistlib">plistlib</a>
  &#8226;   <a href="#pyautogui">pyautogui</a>
@@ -7650,7 +7510,6 @@ imports:
   <div class="import">
 imported by:
     <a href="#fractions">fractions</a>
- &#8226;   <a href="#loguru._file_sink">loguru._file_sink</a>
  &#8226;   <a href="#setuptools.config._validate_pyproject.fastjsonschema_validations">setuptools.config._validate_pyproject.fastjsonschema_validations</a>
  &#8226;   <a href="#statistics">statistics</a>
  &#8226;   <a href="#xmlrpc.client">xmlrpc.client</a>
@@ -7789,6 +7648,25 @@ imports:
 imported by:
     <a href="#numpy.testing._private.utils">numpy.testing._private.utils</a>
  &#8226;   <a href="#pyrect">pyrect</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="drawing_window"></a>
+  <a target="code" href="///C:/Users/renzo/Documents/screen_touch_controls/drawing_window.py" type="text/plain"><tt>drawing_window</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#PyQt5.QtCore">PyQt5.QtCore</a>
+ &#8226;   <a href="#PyQt5.QtGui">PyQt5.QtGui</a>
+ &#8226;   <a href="#PyQt5.QtWidgets">PyQt5.QtWidgets</a>
+ &#8226;   <a href="#pyautogui">pyautogui</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#overlay_button">overlay_button</a>
 
   </div>
 
@@ -10845,7 +10723,6 @@ imported by:
  &#8226;   <a href="#socket">socket</a>
  &#8226;   <a href="#ssl">ssl</a>
  &#8226;   <a href="#tkinter">tkinter</a>
- &#8226;   <a href="#uuid">uuid</a>
 
   </div>
 
@@ -11042,9 +10919,6 @@ imported by:
  &#8226;   <a href="#inspect">inspect</a>
  &#8226;   <a href="#ipaddress">ipaddress</a>
  &#8226;   <a href="#locale">locale</a>
- &#8226;   <a href="#loguru._file_sink">loguru._file_sink</a>
- &#8226;   <a href="#loguru._handler">loguru._handler</a>
- &#8226;   <a href="#loguru._logger">loguru._logger</a>
  &#8226;   <a href="#multiprocessing.reduction">multiprocessing.reduction</a>
  &#8226;   <a href="#multiprocessing.shared_memory">multiprocessing.shared_memory</a>
  &#8226;   <a href="#numpy._core._ufunc_config">numpy._core._ufunc_config</a>
@@ -11269,8 +11143,7 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#loguru._file_sink">loguru._file_sink</a>
- &#8226;   <a href="#pathlib._abc">pathlib._abc</a>
+    <a href="#pathlib._abc">pathlib._abc</a>
  &#8226;   <a href="#pathlib._local">pathlib._local</a>
  &#8226;   <a href="#pdb">pdb</a>
  &#8226;   <a href="#setuptools._distutils.command.sdist">setuptools._distutils.command.sdist</a>
@@ -11324,7 +11197,6 @@ imports:
 imported by:
     <a href="#PIL.FitsImagePlugin">PIL.FitsImagePlugin</a>
  &#8226;   <a href="#fileinput">fileinput</a>
- &#8226;   <a href="#loguru._file_sink">loguru._file_sink</a>
  &#8226;   <a href="#numpy.lib._datasource">numpy.lib._datasource</a>
  &#8226;   <a href="#setuptools._vendor.backports.tarfile">setuptools._vendor.backports.tarfile</a>
  &#8226;   <a href="#tarfile">tarfile</a>
@@ -11354,7 +11226,6 @@ imported by:
  &#8226;   <a href="#random">random</a>
  &#8226;   <a href="#setuptools._vendor.wheel.wheelfile">setuptools._vendor.wheel.wheelfile</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
- &#8226;   <a href="#uuid">uuid</a>
 
   </div>
 
@@ -12173,8 +12044,6 @@ imported by:
  &#8226;   <a href="#doctest">doctest</a>
  &#8226;   <a href="#importlib.metadata">importlib.metadata</a>
  &#8226;   <a href="#importlib.resources._common">importlib.resources._common</a>
- &#8226;   <a href="#loguru._better_exceptions">loguru._better_exceptions</a>
- &#8226;   <a href="#loguru._logger">loguru._logger</a>
  &#8226;   <a href="#numpy.lib._utils_impl">numpy.lib._utils_impl</a>
  &#8226;   <a href="#numpy.ma.core">numpy.ma.core</a>
  &#8226;   <a href="#numpy.testing._private.utils">numpy.testing._private.utils</a>
@@ -12266,7 +12135,6 @@ imported by:
  &#8226;   <a href="#importlib.resources._adapters">importlib.resources._adapters</a>
  &#8226;   <a href="#importlib.resources.abc">importlib.resources.abc</a>
  &#8226;   <a href="#logging">logging</a>
- &#8226;   <a href="#loguru._better_exceptions">loguru._better_exceptions</a>
  &#8226;   <a href="#lzma">lzma</a>
  &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
  &#8226;   <a href="#multiprocessing.popen_forkserver">multiprocessing.popen_forkserver</a>
@@ -12304,7 +12172,6 @@ imported by:
  &#8226;   <a href="#unittest.result">unittest.result</a>
  &#8226;   <a href="#urllib.error">urllib.error</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
- &#8226;   <a href="#uuid">uuid</a>
  &#8226;   <a href="#xml.etree.ElementTree">xml.etree.ElementTree</a>
  &#8226;   <a href="#xml.sax">xml.sax</a>
  &#8226;   <a href="#xml.sax.saxutils">xml.sax.saxutils</a>
@@ -12364,7 +12231,6 @@ imported by:
  &#8226;   <a href="#importlib.resources.abc">importlib.resources.abc</a>
  &#8226;   <a href="#importlib.resources.readers">importlib.resources.readers</a>
  &#8226;   <a href="#inspect">inspect</a>
- &#8226;   <a href="#loguru._logger">loguru._logger</a>
  &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
  &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
  &#8226;   <a href="#multiprocessing.process">multiprocessing.process</a>
@@ -12507,17 +12373,6 @@ imported by:
 </div>
 
 <div class="node">
-  <a name="jeepney"></a>
-  <a target="code" href="" type="text/plain"><tt>jeepney</tt></a>
-<span class="moduletype">MissingModule</span>  <div class="import">
-imported by:
-    <a href="#notifypy.os_notifiers.linux">notifypy.os_notifiers.linux</a>
-
-  </div>
-
-</div>
-
-<div class="node">
   <a name="jnius"></a>
   <a target="code" href="" type="text/plain"><tt>jnius</tt></a>
 <span class="moduletype">MissingModule</span>  <div class="import">
@@ -12545,7 +12400,6 @@ imported by:
  &#8226;   <a href="#json.decoder">json.decoder</a>
  &#8226;   <a href="#json.encoder">json.encoder</a>
  &#8226;   <a href="#json.scanner">json.scanner</a>
- &#8226;   <a href="#loguru._handler">loguru._handler</a>
  &#8226;   <a href="#numpy.__config__">numpy.__config__</a>
  &#8226;   <a href="#numpy.testing._private.utils">numpy.testing._private.utils</a>
  &#8226;   <a href="#setuptools._vendor.importlib_metadata">setuptools._vendor.importlib_metadata</a>
@@ -12622,7 +12476,6 @@ imported by:
  &#8226;   <a href="#collections">collections</a>
  &#8226;   <a href="#dataclasses">dataclasses</a>
  &#8226;   <a href="#inspect">inspect</a>
- &#8226;   <a href="#loguru._better_exceptions">loguru._better_exceptions</a>
  &#8226;   <a href="#rlcompleter">rlcompleter</a>
 
   </div>
@@ -12647,7 +12500,6 @@ imported by:
  &#8226;   <a href="#bdb">bdb</a>
  &#8226;   <a href="#doctest">doctest</a>
  &#8226;   <a href="#inspect">inspect</a>
- &#8226;   <a href="#loguru._better_exceptions">loguru._better_exceptions</a>
  &#8226;   <a href="#pdb">pdb</a>
  &#8226;   <a href="#pkg_resources">pkg_resources</a>
  &#8226;   <a href="#traceback">traceback</a>
@@ -12722,8 +12574,6 @@ imported by:
  &#8226;   <a href="#concurrent.futures._base">concurrent.futures._base</a>
  &#8226;   <a href="#hashlib">hashlib</a>
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
- &#8226;   <a href="#loguru._logger">loguru._logger</a>
- &#8226;   <a href="#loguru._simple_sinks">loguru._simple_sinks</a>
  &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
  &#8226;   <a href="#packaging.tags">packaging.tags</a>
  &#8226;   <a href="#setuptools._distutils._log">setuptools._distutils._log</a>
@@ -12745,446 +12595,6 @@ imported by:
 </div>
 
 <div class="node">
-  <a name="loguru"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/loguru/__init__.py" type="text/plain"><tt>loguru</tt></a>
-<span class="moduletype">Package</span>  <div class="import">
-imports:
-    <a href="#atexit">atexit</a>
- &#8226;   <a href="#loguru">loguru</a>
- &#8226;   <a href="#loguru._asyncio_loop">loguru._asyncio_loop</a>
- &#8226;   <a href="#loguru._colorama">loguru._colorama</a>
- &#8226;   <a href="#loguru._defaults">loguru._defaults</a>
- &#8226;   <a href="#loguru._filters">loguru._filters</a>
- &#8226;   <a href="#loguru._logger">loguru._logger</a>
- &#8226;   <a href="#loguru._string_parsers">loguru._string_parsers</a>
- &#8226;   <a href="#sys">sys</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#loguru">loguru</a>
- &#8226;   <a href="#loguru._asyncio_loop">loguru._asyncio_loop</a>
- &#8226;   <a href="#loguru._better_exceptions">loguru._better_exceptions</a>
- &#8226;   <a href="#loguru._colorama">loguru._colorama</a>
- &#8226;   <a href="#loguru._colorizer">loguru._colorizer</a>
- &#8226;   <a href="#loguru._contextvars">loguru._contextvars</a>
- &#8226;   <a href="#loguru._ctime_functions">loguru._ctime_functions</a>
- &#8226;   <a href="#loguru._datetime">loguru._datetime</a>
- &#8226;   <a href="#loguru._defaults">loguru._defaults</a>
- &#8226;   <a href="#loguru._error_interceptor">loguru._error_interceptor</a>
- &#8226;   <a href="#loguru._file_sink">loguru._file_sink</a>
- &#8226;   <a href="#loguru._filters">loguru._filters</a>
- &#8226;   <a href="#loguru._get_frame">loguru._get_frame</a>
- &#8226;   <a href="#loguru._handler">loguru._handler</a>
- &#8226;   <a href="#loguru._locks_machinery">loguru._locks_machinery</a>
- &#8226;   <a href="#loguru._logger">loguru._logger</a>
- &#8226;   <a href="#loguru._recattrs">loguru._recattrs</a>
- &#8226;   <a href="#loguru._simple_sinks">loguru._simple_sinks</a>
- &#8226;   <a href="#loguru._string_parsers">loguru._string_parsers</a>
- &#8226;   <a href="#notifypy.notify">notifypy.notify</a>
- &#8226;   <a href="#notifypy.os_notifiers.linux">notifypy.os_notifiers.linux</a>
- &#8226;   <a href="#notifypy.os_notifiers.macos">notifypy.os_notifiers.macos</a>
- &#8226;   <a href="#notifypy.os_notifiers.windows">notifypy.os_notifiers.windows</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="loguru._asyncio_loop"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/loguru/_asyncio_loop.py" type="text/plain"><tt>loguru._asyncio_loop</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#asyncio">asyncio</a>
- &#8226;   <a href="#loguru">loguru</a>
- &#8226;   <a href="#sys">sys</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#loguru">loguru</a>
- &#8226;   <a href="#loguru._logger">loguru._logger</a>
- &#8226;   <a href="#loguru._simple_sinks">loguru._simple_sinks</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="loguru._better_exceptions"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/loguru/_better_exceptions.py" type="text/plain"><tt>loguru._better_exceptions</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#builtins">builtins</a>
- &#8226;   <a href="#inspect">inspect</a>
- &#8226;   <a href="#io">io</a>
- &#8226;   <a href="#keyword">keyword</a>
- &#8226;   <a href="#linecache">linecache</a>
- &#8226;   <a href="#loguru">loguru</a>
- &#8226;   <a href="#os">os</a>
- &#8226;   <a href="#re">re</a>
- &#8226;   <a href="#sys">sys</a>
- &#8226;   <a href="#sysconfig">sysconfig</a>
- &#8226;   <a href="#tokenize">tokenize</a>
- &#8226;   <a href="#traceback">traceback</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#loguru._logger">loguru._logger</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="loguru._colorama"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/loguru/_colorama.py" type="text/plain"><tt>loguru._colorama</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#colorama">colorama</a>
- &#8226;   <a href="#colorama.win32">colorama.win32</a>
- &#8226;   <a href="#loguru">loguru</a>
- &#8226;   <a href="#os">os</a>
- &#8226;   <a href="#sys">sys</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#loguru">loguru</a>
- &#8226;   <a href="#loguru._logger">loguru._logger</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="loguru._colorizer"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/loguru/_colorizer.py" type="text/plain"><tt>loguru._colorizer</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#loguru">loguru</a>
- &#8226;   <a href="#re">re</a>
- &#8226;   <a href="#string">string</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#loguru._handler">loguru._handler</a>
- &#8226;   <a href="#loguru._logger">loguru._logger</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="loguru._contextvars"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/loguru/_contextvars.py" type="text/plain"><tt>loguru._contextvars</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#aiocontextvars">aiocontextvars</a>
- &#8226;   <a href="#contextvars">contextvars</a>
- &#8226;   <a href="#loguru">loguru</a>
- &#8226;   <a href="#sys">sys</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#loguru._logger">loguru._logger</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="loguru._ctime_functions"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/loguru/_ctime_functions.py" type="text/plain"><tt>loguru._ctime_functions</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#loguru">loguru</a>
- &#8226;   <a href="#os">os</a>
- &#8226;   <a href="#win32_setctime">win32_setctime</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#loguru._file_sink">loguru._file_sink</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="loguru._datetime"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/loguru/_datetime.py" type="text/plain"><tt>loguru._datetime</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#calendar">calendar</a>
- &#8226;   <a href="#datetime">datetime</a>
- &#8226;   <a href="#loguru">loguru</a>
- &#8226;   <a href="#re">re</a>
- &#8226;   <a href="#time">time</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#loguru._file_sink">loguru._file_sink</a>
- &#8226;   <a href="#loguru._logger">loguru._logger</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="loguru._defaults"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/loguru/_defaults.py" type="text/plain"><tt>loguru._defaults</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#loguru">loguru</a>
- &#8226;   <a href="#os">os</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#loguru">loguru</a>
- &#8226;   <a href="#loguru._logger">loguru._logger</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="loguru._error_interceptor"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/loguru/_error_interceptor.py" type="text/plain"><tt>loguru._error_interceptor</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#loguru">loguru</a>
- &#8226;   <a href="#sys">sys</a>
- &#8226;   <a href="#traceback">traceback</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#loguru._logger">loguru._logger</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="loguru._file_sink"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/loguru/_file_sink.py" type="text/plain"><tt>loguru._file_sink</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#bz2">bz2</a>
- &#8226;   <a href="#datetime">datetime</a>
- &#8226;   <a href="#decimal">decimal</a>
- &#8226;   <a href="#functools">functools</a>
- &#8226;   <a href="#glob">glob</a>
- &#8226;   <a href="#gzip">gzip</a>
- &#8226;   <a href="#loguru">loguru</a>
- &#8226;   <a href="#loguru._ctime_functions">loguru._ctime_functions</a>
- &#8226;   <a href="#loguru._datetime">loguru._datetime</a>
- &#8226;   <a href="#loguru._string_parsers">loguru._string_parsers</a>
- &#8226;   <a href="#lzma">lzma</a>
- &#8226;   <a href="#numbers">numbers</a>
- &#8226;   <a href="#os">os</a>
- &#8226;   <a href="#shutil">shutil</a>
- &#8226;   <a href="#string">string</a>
- &#8226;   <a href="#tarfile">tarfile</a>
- &#8226;   <a href="#zipfile">zipfile</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#loguru._logger">loguru._logger</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="loguru._filters"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/loguru/_filters.py" type="text/plain"><tt>loguru._filters</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#loguru">loguru</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#loguru">loguru</a>
- &#8226;   <a href="#loguru._logger">loguru._logger</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="loguru._get_frame"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/loguru/_get_frame.py" type="text/plain"><tt>loguru._get_frame</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#loguru">loguru</a>
- &#8226;   <a href="#sys">sys</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#loguru._logger">loguru._logger</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="loguru._handler"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/loguru/_handler.py" type="text/plain"><tt>loguru._handler</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#functools">functools</a>
- &#8226;   <a href="#json">json</a>
- &#8226;   <a href="#loguru">loguru</a>
- &#8226;   <a href="#loguru._colorizer">loguru._colorizer</a>
- &#8226;   <a href="#loguru._locks_machinery">loguru._locks_machinery</a>
- &#8226;   <a href="#multiprocessing">multiprocessing</a>
- &#8226;   <a href="#os">os</a>
- &#8226;   <a href="#threading">threading</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#loguru._logger">loguru._logger</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="loguru._locks_machinery"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/loguru/_locks_machinery.py" type="text/plain"><tt>loguru._locks_machinery</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#loguru">loguru</a>
- &#8226;   <a href="#os">os</a>
- &#8226;   <a href="#threading">threading</a>
- &#8226;   <a href="#weakref">weakref</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#loguru._handler">loguru._handler</a>
- &#8226;   <a href="#loguru._logger">loguru._logger</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="loguru._logger"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/loguru/_logger.py" type="text/plain"><tt>loguru._logger</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#builtins">builtins</a>
- &#8226;   <a href="#collections">collections</a>
- &#8226;   <a href="#contextlib">contextlib</a>
- &#8226;   <a href="#functools">functools</a>
- &#8226;   <a href="#inspect">inspect</a>
- &#8226;   <a href="#itertools">itertools</a>
- &#8226;   <a href="#logging">logging</a>
- &#8226;   <a href="#loguru">loguru</a>
- &#8226;   <a href="#loguru._asyncio_loop">loguru._asyncio_loop</a>
- &#8226;   <a href="#loguru._better_exceptions">loguru._better_exceptions</a>
- &#8226;   <a href="#loguru._colorama">loguru._colorama</a>
- &#8226;   <a href="#loguru._colorizer">loguru._colorizer</a>
- &#8226;   <a href="#loguru._contextvars">loguru._contextvars</a>
- &#8226;   <a href="#loguru._datetime">loguru._datetime</a>
- &#8226;   <a href="#loguru._defaults">loguru._defaults</a>
- &#8226;   <a href="#loguru._error_interceptor">loguru._error_interceptor</a>
- &#8226;   <a href="#loguru._file_sink">loguru._file_sink</a>
- &#8226;   <a href="#loguru._filters">loguru._filters</a>
- &#8226;   <a href="#loguru._get_frame">loguru._get_frame</a>
- &#8226;   <a href="#loguru._handler">loguru._handler</a>
- &#8226;   <a href="#loguru._locks_machinery">loguru._locks_machinery</a>
- &#8226;   <a href="#loguru._recattrs">loguru._recattrs</a>
- &#8226;   <a href="#loguru._simple_sinks">loguru._simple_sinks</a>
- &#8226;   <a href="#multiprocessing">multiprocessing</a>
- &#8226;   <a href="#multiprocessing.current_process">multiprocessing.current_process</a>
- &#8226;   <a href="#os">os</a>
- &#8226;   <a href="#os.path">os.path</a>
- &#8226;   <a href="#pathlib">pathlib</a>
- &#8226;   <a href="#re">re</a>
- &#8226;   <a href="#sys">sys</a>
- &#8226;   <a href="#threading">threading</a>
- &#8226;   <a href="#warnings">warnings</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#loguru">loguru</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="loguru._recattrs"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/loguru/_recattrs.py" type="text/plain"><tt>loguru._recattrs</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#collections">collections</a>
- &#8226;   <a href="#loguru">loguru</a>
- &#8226;   <a href="#pickle">pickle</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#loguru._logger">loguru._logger</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="loguru._simple_sinks"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/loguru/_simple_sinks.py" type="text/plain"><tt>loguru._simple_sinks</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#asyncio">asyncio</a>
- &#8226;   <a href="#logging">logging</a>
- &#8226;   <a href="#loguru">loguru</a>
- &#8226;   <a href="#loguru._asyncio_loop">loguru._asyncio_loop</a>
- &#8226;   <a href="#weakref">weakref</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#loguru._logger">loguru._logger</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="loguru._string_parsers"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/loguru/_string_parsers.py" type="text/plain"><tt>loguru._string_parsers</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#datetime">datetime</a>
- &#8226;   <a href="#loguru">loguru</a>
- &#8226;   <a href="#re">re</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#loguru">loguru</a>
- &#8226;   <a href="#loguru._file_sink">loguru._file_sink</a>
-
-  </div>
-
-</div>
-
-<div class="node">
   <a name="lzma"></a>
   <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/lzma.py" type="text/plain"><tt>lzma</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
@@ -13198,8 +12608,7 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#loguru._file_sink">loguru._file_sink</a>
- &#8226;   <a href="#numpy.lib._datasource">numpy.lib._datasource</a>
+    <a href="#numpy.lib._datasource">numpy.lib._datasource</a>
  &#8226;   <a href="#setuptools._vendor.backports.tarfile">setuptools._vendor.backports.tarfile</a>
  &#8226;   <a href="#shutil">shutil</a>
  &#8226;   <a href="#tarfile">tarfile</a>
@@ -13363,7 +12772,6 @@ imported by:
     <a href="#_pyrepl.windows_console">_pyrepl.windows_console</a>
  &#8226;   <a href="#asyncio.windows_events">asyncio.windows_events</a>
  &#8226;   <a href="#asyncio.windows_utils">asyncio.windows_utils</a>
- &#8226;   <a href="#colorama.winterm">colorama.winterm</a>
  &#8226;   <a href="#getpass">getpass</a>
  &#8226;   <a href="#multiprocessing.popen_spawn_win32">multiprocessing.popen_spawn_win32</a>
  &#8226;   <a href="#multiprocessing.spawn">multiprocessing.spawn</a>
@@ -13384,7 +12792,6 @@ imports:
  &#8226;   <a href="#multiprocessing.TimeoutError">multiprocessing.TimeoutError</a>
  &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
  &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
- &#8226;   <a href="#multiprocessing.current_process">multiprocessing.current_process</a>
  &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
  &#8226;   <a href="#multiprocessing.get_context">multiprocessing.get_context</a>
  &#8226;   <a href="#multiprocessing.get_start_method">multiprocessing.get_start_method</a>
@@ -13403,8 +12810,6 @@ imports:
   <div class="import">
 imported by:
     <a href="#concurrent.futures.process">concurrent.futures.process</a>
- &#8226;   <a href="#loguru._handler">loguru._handler</a>
- &#8226;   <a href="#loguru._logger">loguru._logger</a>
  &#8226;   <a href="#multiprocessing">multiprocessing</a>
  &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
  &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
@@ -13557,18 +12962,6 @@ imported by:
  &#8226;   <a href="#multiprocessing.sharedctypes">multiprocessing.sharedctypes</a>
  &#8226;   <a href="#multiprocessing.spawn">multiprocessing.spawn</a>
  &#8226;   <a href="#multiprocessing.synchronize">multiprocessing.synchronize</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="multiprocessing.current_process"></a>
-  <a target="code" href="" type="text/plain"><tt>multiprocessing.current_process</tt></a>
-<span class="moduletype">MissingModule</span>  <div class="import">
-imported by:
-    <a href="#loguru._logger">loguru._logger</a>
- &#8226;   <a href="#multiprocessing">multiprocessing</a>
 
   </div>
 
@@ -14206,183 +13599,6 @@ imported by:
 </div>
 
 <div class="node">
-  <a name="notifypy"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/notifypy/__init__.py" type="text/plain"><tt>notifypy</tt></a>
-<span class="moduletype">Package</span>  <div class="import">
-imports:
-    <a href="#notifypy.notify">notifypy.notify</a>
- &#8226;   <a href="#notifypy.os_notifiers._base">notifypy.os_notifiers._base</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#actionOverlay.py">actionOverlay.py</a>
- &#8226;   <a href="#notifypy.exceptions">notifypy.exceptions</a>
- &#8226;   <a href="#notifypy.notify">notifypy.notify</a>
- &#8226;   <a href="#notifypy.os_notifiers">notifypy.os_notifiers</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="notifypy.exceptions"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/notifypy/exceptions.py" type="text/plain"><tt>notifypy.exceptions</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#notifypy">notifypy</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#notifypy.notify">notifypy.notify</a>
- &#8226;   <a href="#notifypy.os_notifiers.linux">notifypy.os_notifiers.linux</a>
- &#8226;   <a href="#notifypy.os_notifiers.macos">notifypy.os_notifiers.macos</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="notifypy.notify"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/notifypy/notify.py" type="text/plain"><tt>notifypy.notify</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#loguru">loguru</a>
- &#8226;   <a href="#notifypy">notifypy</a>
- &#8226;   <a href="#notifypy.exceptions">notifypy.exceptions</a>
- &#8226;   <a href="#notifypy.os_notifiers._base">notifypy.os_notifiers._base</a>
- &#8226;   <a href="#notifypy.os_notifiers.linux">notifypy.os_notifiers.linux</a>
- &#8226;   <a href="#notifypy.os_notifiers.macos">notifypy.os_notifiers.macos</a>
- &#8226;   <a href="#notifypy.os_notifiers.windows">notifypy.os_notifiers.windows</a>
- &#8226;   <a href="#os">os</a>
- &#8226;   <a href="#pathlib">pathlib</a>
- &#8226;   <a href="#platform">platform</a>
- &#8226;   <a href="#threading">threading</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#notifypy">notifypy</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="notifypy.os_notifiers"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/notifypy/os_notifiers/__init__.py" type="text/plain"><tt>notifypy.os_notifiers</tt></a>
-<span class="moduletype">Package</span>  <div class="import">
-imports:
-    <a href="#notifypy">notifypy</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#notifypy.os_notifiers._base">notifypy.os_notifiers._base</a>
- &#8226;   <a href="#notifypy.os_notifiers.linux">notifypy.os_notifiers.linux</a>
- &#8226;   <a href="#notifypy.os_notifiers.macos">notifypy.os_notifiers.macos</a>
- &#8226;   <a href="#notifypy.os_notifiers.windows">notifypy.os_notifiers.windows</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="notifypy.os_notifiers._base"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/notifypy/os_notifiers/_base.py" type="text/plain"><tt>notifypy.os_notifiers._base</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#notifypy.os_notifiers">notifypy.os_notifiers</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#notifypy">notifypy</a>
- &#8226;   <a href="#notifypy.notify">notifypy.notify</a>
- &#8226;   <a href="#notifypy.os_notifiers.linux">notifypy.os_notifiers.linux</a>
- &#8226;   <a href="#notifypy.os_notifiers.macos">notifypy.os_notifiers.macos</a>
- &#8226;   <a href="#notifypy.os_notifiers.windows">notifypy.os_notifiers.windows</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="notifypy.os_notifiers.linux"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/notifypy/os_notifiers/linux.py" type="text/plain"><tt>notifypy.os_notifiers.linux</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#'jeepney.io'">'jeepney.io'</a>
- &#8226;   <a href="#jeepney">jeepney</a>
- &#8226;   <a href="#loguru">loguru</a>
- &#8226;   <a href="#notifypy.exceptions">notifypy.exceptions</a>
- &#8226;   <a href="#notifypy.os_notifiers">notifypy.os_notifiers</a>
- &#8226;   <a href="#notifypy.os_notifiers._base">notifypy.os_notifiers._base</a>
- &#8226;   <a href="#os">os</a>
- &#8226;   <a href="#shlex">shlex</a>
- &#8226;   <a href="#shutil">shutil</a>
- &#8226;   <a href="#subprocess">subprocess</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#notifypy.notify">notifypy.notify</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="notifypy.os_notifiers.macos"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/notifypy/os_notifiers/macos.py" type="text/plain"><tt>notifypy.os_notifiers.macos</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#loguru">loguru</a>
- &#8226;   <a href="#notifypy.exceptions">notifypy.exceptions</a>
- &#8226;   <a href="#notifypy.os_notifiers">notifypy.os_notifiers</a>
- &#8226;   <a href="#notifypy.os_notifiers._base">notifypy.os_notifiers._base</a>
- &#8226;   <a href="#os">os</a>
- &#8226;   <a href="#pathlib">pathlib</a>
- &#8226;   <a href="#shlex">shlex</a>
- &#8226;   <a href="#subprocess">subprocess</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#notifypy.notify">notifypy.notify</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="notifypy.os_notifiers.windows"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/notifypy/os_notifiers/windows.py" type="text/plain"><tt>notifypy.os_notifiers.windows</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#codecs">codecs</a>
- &#8226;   <a href="#loguru">loguru</a>
- &#8226;   <a href="#notifypy.os_notifiers">notifypy.os_notifiers</a>
- &#8226;   <a href="#notifypy.os_notifiers._base">notifypy.os_notifiers._base</a>
- &#8226;   <a href="#os">os</a>
- &#8226;   <a href="#pathlib">pathlib</a>
- &#8226;   <a href="#subprocess">subprocess</a>
- &#8226;   <a href="#tempfile">tempfile</a>
- &#8226;   <a href="#uuid">uuid</a>
- &#8226;   <a href="#xml.etree">xml.etree</a>
- &#8226;   <a href="#xml.etree.ElementTree">xml.etree.ElementTree</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#notifypy.notify">notifypy.notify</a>
-
-  </div>
-
-</div>
-
-<div class="node">
   <a name="nt"></a>
   <tt>nt</tt> <span class="moduletype"><i>(builtin module)</i></span>  <div class="import">
 imported by:
@@ -14454,7 +13670,6 @@ imported by:
  &#8226;   <a href="#PIL._typing">PIL._typing</a>
  &#8226;   <a href="#_pydecimal">_pydecimal</a>
  &#8226;   <a href="#fractions">fractions</a>
- &#8226;   <a href="#loguru._file_sink">loguru._file_sink</a>
  &#8226;   <a href="#numpy._core.arrayprint">numpy._core.arrayprint</a>
  &#8226;   <a href="#numpy._core.numeric">numpy._core.numeric</a>
  &#8226;   <a href="#numpy._core.numerictypes">numpy._core.numerictypes</a>
@@ -21304,7 +20519,6 @@ imported by:
  &#8226;   <a href="#asyncio.windows_utils">asyncio.windows_utils</a>
  &#8226;   <a href="#bdb">bdb</a>
  &#8226;   <a href="#bz2">bz2</a>
- &#8226;   <a href="#colorama.ansitowin32">colorama.ansitowin32</a>
  &#8226;   <a href="#concurrent.futures.process">concurrent.futures.process</a>
  &#8226;   <a href="#concurrent.futures.thread">concurrent.futures.thread</a>
  &#8226;   <a href="#configparser">configparser</a>
@@ -21334,14 +20548,6 @@ imported by:
  &#8226;   <a href="#linecache">linecache</a>
  &#8226;   <a href="#locale">locale</a>
  &#8226;   <a href="#logging">logging</a>
- &#8226;   <a href="#loguru._better_exceptions">loguru._better_exceptions</a>
- &#8226;   <a href="#loguru._colorama">loguru._colorama</a>
- &#8226;   <a href="#loguru._ctime_functions">loguru._ctime_functions</a>
- &#8226;   <a href="#loguru._defaults">loguru._defaults</a>
- &#8226;   <a href="#loguru._file_sink">loguru._file_sink</a>
- &#8226;   <a href="#loguru._handler">loguru._handler</a>
- &#8226;   <a href="#loguru._locks_machinery">loguru._locks_machinery</a>
- &#8226;   <a href="#loguru._logger">loguru._logger</a>
  &#8226;   <a href="#lzma">lzma</a>
  &#8226;   <a href="#mimetypes">mimetypes</a>
  &#8226;   <a href="#mouseinfo">mouseinfo</a>
@@ -21364,10 +20570,6 @@ imported by:
  &#8226;   <a href="#multiprocessing.spawn">multiprocessing.spawn</a>
  &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
  &#8226;   <a href="#netrc">netrc</a>
- &#8226;   <a href="#notifypy.notify">notifypy.notify</a>
- &#8226;   <a href="#notifypy.os_notifiers.linux">notifypy.os_notifiers.linux</a>
- &#8226;   <a href="#notifypy.os_notifiers.macos">notifypy.os_notifiers.macos</a>
- &#8226;   <a href="#notifypy.os_notifiers.windows">notifypy.os_notifiers.windows</a>
  &#8226;   <a href="#ntpath">ntpath</a>
  &#8226;   <a href="#numpy">numpy</a>
  &#8226;   <a href="#numpy._core">numpy._core</a>
@@ -21492,9 +20694,7 @@ imported by:
  &#8226;   <a href="#unittest.loader">unittest.loader</a>
  &#8226;   <a href="#unittest.main">unittest.main</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
- &#8226;   <a href="#uuid">uuid</a>
  &#8226;   <a href="#webbrowser">webbrowser</a>
- &#8226;   <a href="#win32_setctime._setctime">win32_setctime._setctime</a>
  &#8226;   <a href="#xml.sax">xml.sax</a>
  &#8226;   <a href="#xml.sax.saxutils">xml.sax.saxutils</a>
  &#8226;   <a href="#zipfile">zipfile</a>
@@ -21516,7 +20716,6 @@ imports:
   <div class="import">
 imported by:
     <a href="#_pyrepl.console">_pyrepl.console</a>
- &#8226;   <a href="#loguru._logger">loguru._logger</a>
  &#8226;   <a href="#numpy._core.memmap">numpy._core.memmap</a>
  &#8226;   <a href="#os">os</a>
  &#8226;   <a href="#pkg_resources">pkg_resources</a>
@@ -21533,6 +20732,28 @@ imported by:
  &#8226;   <a href="#sysconfig">sysconfig</a>
  &#8226;   <a href="#tracemalloc">tracemalloc</a>
  &#8226;   <a href="#unittest.util">unittest.util</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="overlay_button"></a>
+  <a target="code" href="///C:/Users/renzo/Documents/screen_touch_controls/overlay_button.py" type="text/plain"><tt>overlay_button</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#PyQt5.QtCore">PyQt5.QtCore</a>
+ &#8226;   <a href="#PyQt5.QtGui">PyQt5.QtGui</a>
+ &#8226;   <a href="#PyQt5.QtWidgets">PyQt5.QtWidgets</a>
+ &#8226;   <a href="#application_manager">application_manager</a>
+ &#8226;   <a href="#buttons">buttons</a>
+ &#8226;   <a href="#drawing_window">drawing_window</a>
+ &#8226;   <a href="#pyautogui">pyautogui</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#actionOverlay.py">actionOverlay.py</a>
 
   </div>
 
@@ -21990,10 +21211,6 @@ imported by:
  &#8226;   <a href="#importlib.resources._common">importlib.resources._common</a>
  &#8226;   <a href="#importlib.resources.abc">importlib.resources.abc</a>
  &#8226;   <a href="#importlib.resources.readers">importlib.resources.readers</a>
- &#8226;   <a href="#loguru._logger">loguru._logger</a>
- &#8226;   <a href="#notifypy.notify">notifypy.notify</a>
- &#8226;   <a href="#notifypy.os_notifiers.macos">notifypy.os_notifiers.macos</a>
- &#8226;   <a href="#notifypy.os_notifiers.windows">notifypy.os_notifiers.windows</a>
  &#8226;   <a href="#numpy">numpy</a>
  &#8226;   <a href="#numpy.f2py._backends._meson">numpy.f2py._backends._meson</a>
  &#8226;   <a href="#numpy.f2py.crackfortran">numpy.f2py.crackfortran</a>
@@ -22020,7 +21237,6 @@ imported by:
  &#8226;   <a href="#setuptools.config.expand">setuptools.config.expand</a>
  &#8226;   <a href="#setuptools.discovery">setuptools.discovery</a>
  &#8226;   <a href="#setuptools.dist">setuptools.dist</a>
- &#8226;   <a href="#win32_setctime._setctime">win32_setctime._setctime</a>
  &#8226;   <a href="#zipfile._path">zipfile._path</a>
 
   </div>
@@ -22145,7 +21361,6 @@ imports:
   <div class="import">
 imported by:
     <a href="#logging">logging</a>
- &#8226;   <a href="#loguru._recattrs">loguru._recattrs</a>
  &#8226;   <a href="#multiprocessing.reduction">multiprocessing.reduction</a>
  &#8226;   <a href="#numpy._core._methods">numpy._core._methods</a>
  &#8226;   <a href="#numpy.lib._npyio_impl">numpy.lib._npyio_impl</a>
@@ -22292,7 +21507,6 @@ imports:
 imported by:
     <a href="#_pyrepl.unix_console">_pyrepl.unix_console</a>
  &#8226;   <a href="#mouseinfo">mouseinfo</a>
- &#8226;   <a href="#notifypy.notify">notifypy.notify</a>
  &#8226;   <a href="#numpy.f2py.crackfortran">numpy.f2py.crackfortran</a>
  &#8226;   <a href="#numpy.lib._utils_impl">numpy.lib._utils_impl</a>
  &#8226;   <a href="#numpy.testing._private.utils">numpy.testing._private.utils</a>
@@ -22312,7 +21526,6 @@ imported by:
  &#8226;   <a href="#setuptools.monkey">setuptools.monkey</a>
  &#8226;   <a href="#setuptools.msvc">setuptools.msvc</a>
  &#8226;   <a href="#setuptools.windows_support">setuptools.windows_support</a>
- &#8226;   <a href="#uuid">uuid</a>
 
   </div>
 
@@ -22602,7 +21815,8 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#actionOverlay.py">actionOverlay.py</a>
+    <a href="#drawing_window">drawing_window</a>
+ &#8226;   <a href="#overlay_button">overlay_button</a>
  &#8226;   <a href="#pyautogui">pyautogui</a>
  &#8226;   <a href="#pyautogui._pyautogui_osx">pyautogui._pyautogui_osx</a>
  &#8226;   <a href="#pyautogui._pyautogui_win">pyautogui._pyautogui_win</a>
@@ -23061,7 +22275,6 @@ imported by:
  &#8226;   <a href="#setuptools._vendor.more_itertools.recipes">setuptools._vendor.more_itertools.recipes</a>
  &#8226;   <a href="#statistics">statistics</a>
  &#8226;   <a href="#tempfile">tempfile</a>
- &#8226;   <a href="#uuid">uuid</a>
 
   </div>
 
@@ -23107,7 +22320,6 @@ imported by:
  &#8226;   <a href="#argparse">argparse</a>
  &#8226;   <a href="#ast">ast</a>
  &#8226;   <a href="#base64">base64</a>
- &#8226;   <a href="#colorama.ansitowin32">colorama.ansitowin32</a>
  &#8226;   <a href="#configparser">configparser</a>
  &#8226;   <a href="#csv">csv</a>
  &#8226;   <a href="#ctypes._aix">ctypes._aix</a>
@@ -23146,11 +22358,6 @@ imported by:
  &#8226;   <a href="#json.scanner">json.scanner</a>
  &#8226;   <a href="#locale">locale</a>
  &#8226;   <a href="#logging">logging</a>
- &#8226;   <a href="#loguru._better_exceptions">loguru._better_exceptions</a>
- &#8226;   <a href="#loguru._colorizer">loguru._colorizer</a>
- &#8226;   <a href="#loguru._datetime">loguru._datetime</a>
- &#8226;   <a href="#loguru._logger">loguru._logger</a>
- &#8226;   <a href="#loguru._string_parsers">loguru._string_parsers</a>
  &#8226;   <a href="#numpy._core._internal">numpy._core._internal</a>
  &#8226;   <a href="#numpy._typing._add_docstring">numpy._typing._add_docstring</a>
  &#8226;   <a href="#numpy.f2py._backends._meson">numpy.f2py._backends._meson</a>
@@ -27870,8 +27077,6 @@ imports:
   <div class="import">
 imported by:
     <a href="#PIL.ImageShow">PIL.ImageShow</a>
- &#8226;   <a href="#notifypy.os_notifiers.linux">notifypy.os_notifiers.linux</a>
- &#8226;   <a href="#notifypy.os_notifiers.macos">notifypy.os_notifiers.macos</a>
  &#8226;   <a href="#pdb">pdb</a>
  &#8226;   <a href="#setuptools.dist">setuptools.dist</a>
  &#8226;   <a href="#webbrowser">webbrowser</a>
@@ -27911,9 +27116,7 @@ imported by:
  &#8226;   <a href="#argparse">argparse</a>
  &#8226;   <a href="#ctypes.util">ctypes.util</a>
  &#8226;   <a href="#http.server">http.server</a>
- &#8226;   <a href="#loguru._file_sink">loguru._file_sink</a>
  &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
- &#8226;   <a href="#notifypy.os_notifiers.linux">notifypy.os_notifiers.linux</a>
  &#8226;   <a href="#numpy.f2py._backends._distutils">numpy.f2py._backends._distutils</a>
  &#8226;   <a href="#numpy.f2py._backends._meson">numpy.f2py._backends._meson</a>
  &#8226;   <a href="#numpy.lib._datasource">numpy.lib._datasource</a>
@@ -27927,7 +27130,6 @@ imported by:
  &#8226;   <a href="#setuptools.compat.py311">setuptools.compat.py311</a>
  &#8226;   <a href="#tarfile">tarfile</a>
  &#8226;   <a href="#tempfile">tempfile</a>
- &#8226;   <a href="#uuid">uuid</a>
  &#8226;   <a href="#webbrowser">webbrowser</a>
  &#8226;   <a href="#zipfile">zipfile</a>
 
@@ -28052,7 +27254,6 @@ imported by:
  &#8226;   <a href="#socketserver">socketserver</a>
  &#8226;   <a href="#ssl">ssl</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
- &#8226;   <a href="#uuid">uuid</a>
 
   </div>
 
@@ -28247,8 +27448,6 @@ imported by:
  &#8226;   <a href="#email._header_value_parser">email._header_value_parser</a>
  &#8226;   <a href="#email.quoprimime">email.quoprimime</a>
  &#8226;   <a href="#logging">logging</a>
- &#8226;   <a href="#loguru._colorizer">loguru._colorizer</a>
- &#8226;   <a href="#loguru._file_sink">loguru._file_sink</a>
  &#8226;   <a href="#ntpath">ntpath</a>
  &#8226;   <a href="#nturl2path">nturl2path</a>
  &#8226;   <a href="#numpy.f2py._backends._meson">numpy.f2py._backends._meson</a>
@@ -28387,9 +27586,6 @@ imported by:
  &#8226;   <a href="#mouseinfo">mouseinfo</a>
  &#8226;   <a href="#multiprocessing.popen_spawn_win32">multiprocessing.popen_spawn_win32</a>
  &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
- &#8226;   <a href="#notifypy.os_notifiers.linux">notifypy.os_notifiers.linux</a>
- &#8226;   <a href="#notifypy.os_notifiers.macos">notifypy.os_notifiers.macos</a>
- &#8226;   <a href="#notifypy.os_notifiers.windows">notifypy.os_notifiers.windows</a>
  &#8226;   <a href="#numpy.f2py">numpy.f2py</a>
  &#8226;   <a href="#numpy.f2py._backends._meson">numpy.f2py._backends._meson</a>
  &#8226;   <a href="#numpy.testing._private.extbuild">numpy.testing._private.extbuild</a>
@@ -28411,7 +27607,6 @@ imported by:
  &#8226;   <a href="#setuptools._vendor.wheel.vendored.packaging._musllinux">setuptools._vendor.wheel.vendored.packaging._musllinux</a>
  &#8226;   <a href="#setuptools._vendor.wheel.vendored.packaging.tags">setuptools._vendor.wheel.vendored.packaging.tags</a>
  &#8226;   <a href="#setuptools.installer">setuptools.installer</a>
- &#8226;   <a href="#uuid">uuid</a>
  &#8226;   <a href="#webbrowser">webbrowser</a>
 
   </div>
@@ -28476,8 +27671,6 @@ imported by:
  &#8226;   <a href="#code">code</a>
  &#8226;   <a href="#codecs">codecs</a>
  &#8226;   <a href="#collections">collections</a>
- &#8226;   <a href="#colorama.ansitowin32">colorama.ansitowin32</a>
- &#8226;   <a href="#colorama.initialise">colorama.initialise</a>
  &#8226;   <a href="#concurrent.futures.process">concurrent.futures.process</a>
  &#8226;   <a href="#configparser">configparser</a>
  &#8226;   <a href="#contextlib">contextlib</a>
@@ -28517,14 +27710,6 @@ imported by:
  &#8226;   <a href="#linecache">linecache</a>
  &#8226;   <a href="#locale">locale</a>
  &#8226;   <a href="#logging">logging</a>
- &#8226;   <a href="#loguru">loguru</a>
- &#8226;   <a href="#loguru._asyncio_loop">loguru._asyncio_loop</a>
- &#8226;   <a href="#loguru._better_exceptions">loguru._better_exceptions</a>
- &#8226;   <a href="#loguru._colorama">loguru._colorama</a>
- &#8226;   <a href="#loguru._contextvars">loguru._contextvars</a>
- &#8226;   <a href="#loguru._error_interceptor">loguru._error_interceptor</a>
- &#8226;   <a href="#loguru._get_frame">loguru._get_frame</a>
- &#8226;   <a href="#loguru._logger">loguru._logger</a>
  &#8226;   <a href="#mimetypes">mimetypes</a>
  &#8226;   <a href="#mouseinfo">mouseinfo</a>
  &#8226;   <a href="#multiprocessing">multiprocessing</a>
@@ -28687,11 +27872,9 @@ imported by:
  &#8226;   <a href="#unittest.runner">unittest.runner</a>
  &#8226;   <a href="#unittest.suite">unittest.suite</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
- &#8226;   <a href="#uuid">uuid</a>
  &#8226;   <a href="#warnings">warnings</a>
  &#8226;   <a href="#weakref">weakref</a>
  &#8226;   <a href="#webbrowser">webbrowser</a>
- &#8226;   <a href="#win32_setctime._setctime">win32_setctime._setctime</a>
  &#8226;   <a href="#xml.etree.ElementTree">xml.etree.ElementTree</a>
  &#8226;   <a href="#xml.parsers.expat">xml.parsers.expat</a>
  &#8226;   <a href="#xml.sax">xml.sax</a>
@@ -28726,7 +27909,6 @@ imports:
   <div class="import">
 imported by:
     <a href="#_aix_support">_aix_support</a>
- &#8226;   <a href="#loguru._better_exceptions">loguru._better_exceptions</a>
  &#8226;   <a href="#numpy.ctypeslib">numpy.ctypeslib</a>
  &#8226;   <a href="#numpy.testing._private.extbuild">numpy.testing._private.extbuild</a>
  &#8226;   <a href="#numpy.testing._private.utils">numpy.testing._private.utils</a>
@@ -28775,8 +27957,7 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#loguru._file_sink">loguru._file_sink</a>
- &#8226;   <a href="#setuptools._distutils.archive_util">setuptools._distutils.archive_util</a>
+    <a href="#setuptools._distutils.archive_util">setuptools._distutils.archive_util</a>
  &#8226;   <a href="#setuptools._vendor.jaraco.context">setuptools._vendor.jaraco.context</a>
  &#8226;   <a href="#setuptools.archive_util">setuptools.archive_util</a>
  &#8226;   <a href="#shutil">shutil</a>
@@ -28817,7 +27998,6 @@ imported by:
  &#8226;   <a href="#multiprocessing.heap">multiprocessing.heap</a>
  &#8226;   <a href="#multiprocessing.synchronize">multiprocessing.synchronize</a>
  &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
- &#8226;   <a href="#notifypy.os_notifiers.windows">notifypy.os_notifiers.windows</a>
  &#8226;   <a href="#numpy.f2py.diagnose">numpy.f2py.diagnose</a>
  &#8226;   <a href="#numpy.f2py.f2py2e">numpy.f2py.f2py2e</a>
  &#8226;   <a href="#numpy.lib._datasource">numpy.lib._datasource</a>
@@ -28921,9 +28101,6 @@ imported by:
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
  &#8226;   <a href="#importlib.util">importlib.util</a>
  &#8226;   <a href="#logging">logging</a>
- &#8226;   <a href="#loguru._handler">loguru._handler</a>
- &#8226;   <a href="#loguru._locks_machinery">loguru._locks_machinery</a>
- &#8226;   <a href="#loguru._logger">loguru._logger</a>
  &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
  &#8226;   <a href="#multiprocessing.dummy">multiprocessing.dummy</a>
  &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
@@ -28936,7 +28113,6 @@ imported by:
  &#8226;   <a href="#multiprocessing.resource_tracker">multiprocessing.resource_tracker</a>
  &#8226;   <a href="#multiprocessing.synchronize">multiprocessing.synchronize</a>
  &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
- &#8226;   <a href="#notifypy.notify">notifypy.notify</a>
  &#8226;   <a href="#numpy.random.bit_generator">numpy.random.bit_generator</a>
  &#8226;   <a href="#numpy.testing._private.utils">numpy.testing._private.utils</a>
  &#8226;   <a href="#pydoc">pydoc</a>
@@ -28991,7 +28167,6 @@ imported by:
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
  &#8226;   <a href="#http.server">http.server</a>
  &#8226;   <a href="#logging">logging</a>
- &#8226;   <a href="#loguru._datetime">loguru._datetime</a>
  &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
  &#8226;   <a href="#multiprocessing.managers">multiprocessing.managers</a>
  &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
@@ -29020,7 +28195,6 @@ imported by:
  &#8226;   <a href="#unittest.case">unittest.case</a>
  &#8226;   <a href="#unittest.runner">unittest.runner</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
- &#8226;   <a href="#uuid">uuid</a>
  &#8226;   <a href="#xmlrpc.client">xmlrpc.client</a>
  &#8226;   <a href="#zipfile">zipfile</a>
  &#8226;   <a href="#zipimport">zipimport</a>
@@ -29127,7 +28301,6 @@ imported by:
  &#8226;   <a href="#importlib._bootstrap_external">importlib._bootstrap_external</a>
  &#8226;   <a href="#inspect">inspect</a>
  &#8226;   <a href="#linecache">linecache</a>
- &#8226;   <a href="#loguru._better_exceptions">loguru._better_exceptions</a>
  &#8226;   <a href="#numpy.lib.format">numpy.lib.format</a>
  &#8226;   <a href="#pdb">pdb</a>
  &#8226;   <a href="#pydoc">pydoc</a>
@@ -29268,8 +28441,6 @@ imported by:
  &#8226;   <a href="#doctest">doctest</a>
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
  &#8226;   <a href="#logging">logging</a>
- &#8226;   <a href="#loguru._better_exceptions">loguru._better_exceptions</a>
- &#8226;   <a href="#loguru._error_interceptor">loguru._error_interceptor</a>
  &#8226;   <a href="#multiprocessing.managers">multiprocessing.managers</a>
  &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
  &#8226;   <a href="#multiprocessing.process">multiprocessing.process</a>
@@ -29657,7 +28828,6 @@ imported by:
  &#8226;   <a href="#tomllib._parser">tomllib._parser</a>
  &#8226;   <a href="#tomllib._re">tomllib._re</a>
  &#8226;   <a href="#tomllib._types">tomllib._types</a>
- &#8226;   <a href="#win32_setctime._setctime">win32_setctime._setctime</a>
 
   </div>
 
@@ -30280,34 +29450,6 @@ imported by:
 </div>
 
 <div class="node">
-  <a name="uuid"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/uuid.py" type="text/plain"><tt>uuid</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#_uuid">_uuid</a>
- &#8226;   <a href="#argparse">argparse</a>
- &#8226;   <a href="#enum">enum</a>
- &#8226;   <a href="#hashlib">hashlib</a>
- &#8226;   <a href="#io">io</a>
- &#8226;   <a href="#os">os</a>
- &#8226;   <a href="#platform">platform</a>
- &#8226;   <a href="#random">random</a>
- &#8226;   <a href="#shutil">shutil</a>
- &#8226;   <a href="#socket">socket</a>
- &#8226;   <a href="#subprocess">subprocess</a>
- &#8226;   <a href="#sys">sys</a>
- &#8226;   <a href="#time">time</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#notifypy.os_notifiers.windows">notifypy.os_notifiers.windows</a>
-
-  </div>
-
-</div>
-
-<div class="node">
   <a name="vms_lib"></a>
   <a target="code" href="" type="text/plain"><tt>vms_lib</tt></a>
 <span class="moduletype">MissingModule</span>  <div class="import">
@@ -30385,7 +29527,6 @@ imported by:
  &#8226;   <a href="#importlib.resources.readers">importlib.resources.readers</a>
  &#8226;   <a href="#locale">locale</a>
  &#8226;   <a href="#logging">logging</a>
- &#8226;   <a href="#loguru._logger">loguru._logger</a>
  &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
  &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
  &#8226;   <a href="#multiprocessing.resource_tracker">multiprocessing.resource_tracker</a>
@@ -30516,8 +29657,6 @@ imported by:
  &#8226;   <a href="#gzip">gzip</a>
  &#8226;   <a href="#inspect">inspect</a>
  &#8226;   <a href="#logging">logging</a>
- &#8226;   <a href="#loguru._locks_machinery">loguru._locks_machinery</a>
- &#8226;   <a href="#loguru._simple_sinks">loguru._simple_sinks</a>
  &#8226;   <a href="#multiprocessing.dummy">multiprocessing.dummy</a>
  &#8226;   <a href="#multiprocessing.queues">multiprocessing.queues</a>
  &#8226;   <a href="#multiprocessing.sharedctypes">multiprocessing.sharedctypes</a>
@@ -30578,50 +29717,11 @@ imported by:
 </div>
 
 <div class="node">
-  <a name="win32_setctime"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/win32_setctime/__init__.py" type="text/plain"><tt>win32_setctime</tt></a>
-<span class="moduletype">Package</span>  <div class="import">
-imports:
-    <a href="#win32_setctime._setctime">win32_setctime._setctime</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#loguru._ctime_functions">loguru._ctime_functions</a>
- &#8226;   <a href="#win32_setctime._setctime">win32_setctime._setctime</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="win32_setctime._setctime"></a>
-  <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/win32_setctime/_setctime.py" type="text/plain"><tt>win32_setctime._setctime</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#ctypes">ctypes</a>
- &#8226;   <a href="#ctypes.wintypes">ctypes.wintypes</a>
- &#8226;   <a href="#os">os</a>
- &#8226;   <a href="#pathlib">pathlib</a>
- &#8226;   <a href="#sys">sys</a>
- &#8226;   <a href="#typing">typing</a>
- &#8226;   <a href="#win32_setctime">win32_setctime</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#win32_setctime">win32_setctime</a>
-
-  </div>
-
-</div>
-
-<div class="node">
   <a name="win32con"></a>
   <a target="code" href="///C:/Users/renzo/AppData/Local/Programs/Python/Python313/Lib/site-packages/win32/lib/win32con.py" type="text/plain"><tt>win32con</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imported by:
-    <a href="#actionOverlay.py">actionOverlay.py</a>
+    <a href="#application_manager">application_manager</a>
 
   </div>
 
@@ -30631,7 +29731,7 @@ imported by:
   <a name="win32gui"></a>
   <tt>win32gui</tt> <span class="moduletype"><tt>C:\Users\renzo\AppData\Local\Programs\Python\Python313\Lib\site-packages\win32\win32gui.pyd</tt></span>  <div class="import">
 imported by:
-    <a href="#actionOverlay.py">actionOverlay.py</a>
+    <a href="#application_manager">application_manager</a>
 
   </div>
 
@@ -30695,8 +29795,7 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#notifypy.os_notifiers.windows">notifypy.os_notifiers.windows</a>
- &#8226;   <a href="#xml.etree">xml.etree</a>
+    <a href="#xml.etree">xml.etree</a>
  &#8226;   <a href="#xml.etree.ElementInclude">xml.etree.ElementInclude</a>
  &#8226;   <a href="#xml.etree.ElementPath">xml.etree.ElementPath</a>
  &#8226;   <a href="#xml.etree.ElementTree">xml.etree.ElementTree</a>
@@ -30769,7 +29868,6 @@ imports:
 imported by:
     <a href="#PIL.Image">PIL.Image</a>
  &#8226;   <a href="#_elementtree">_elementtree</a>
- &#8226;   <a href="#notifypy.os_notifiers.windows">notifypy.os_notifiers.windows</a>
  &#8226;   <a href="#xml.etree">xml.etree</a>
  &#8226;   <a href="#xml.etree.ElementInclude">xml.etree.ElementInclude</a>
  &#8226;   <a href="#xml.etree.cElementTree">xml.etree.cElementTree</a>
@@ -31055,7 +30153,6 @@ imports:
 imported by:
     <a href="#importlib.metadata">importlib.metadata</a>
  &#8226;   <a href="#importlib.resources.readers">importlib.resources.readers</a>
- &#8226;   <a href="#loguru._file_sink">loguru._file_sink</a>
  &#8226;   <a href="#numpy.lib._npyio_impl">numpy.lib._npyio_impl</a>
  &#8226;   <a href="#pkg_resources">pkg_resources</a>
  &#8226;   <a href="#pyi_rth_inspect.py">pyi_rth_inspect.py</a>
