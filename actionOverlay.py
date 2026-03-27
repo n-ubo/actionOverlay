@@ -118,6 +118,28 @@ class DrawingWindow(QWidget):
         self.color_picker_button.clicked.connect(self.pick_color_from_screen)
         title_layout.addWidget(self.color_picker_button)
 
+        self.undo_button = QPushButton("↶")
+        self.undo_button.setFixedSize(32, 32)
+        self.undo_button.setToolTip("Undo (Ctrl+Z)")
+        self.undo_button.setEnabled(False)
+        self.undo_button.setStyleSheet("""
+            QPushButton { background-color: #eee; color: #222; border: 2px solid #222; border-radius: 4px; font-size: 18px; }
+            QPushButton:disabled { background-color: #555; color: #999; border-color: #444; }
+        """)
+        self.undo_button.clicked.connect(self.undo)
+        title_layout.addWidget(self.undo_button)
+
+        self.redo_button = QPushButton("↷")
+        self.redo_button.setFixedSize(32, 32)
+        self.redo_button.setToolTip("Redo (Ctrl+Y)")
+        self.redo_button.setEnabled(False)
+        self.redo_button.setStyleSheet("""
+            QPushButton { background-color: #eee; color: #222; border: 2px solid #222; border-radius: 4px; font-size: 18px; }
+            QPushButton:disabled { background-color: #555; color: #999; border-color: #444; }
+        """)
+        self.redo_button.clicked.connect(self.redo)
+        title_layout.addWidget(self.redo_button)
+
         # sepparator
         sep = QWidget()
         sep.setFixedWidth(2)
@@ -318,8 +340,13 @@ class DrawingWindow(QWidget):
         self.pixmap.fill(Qt.transparent)
         self.last_point = None
 
+        self.history = []
+        self.future = []
+
         self.dragging = False
         self.offset = QPoint()
+
+        self.setFocusPolicy(Qt.StrongFocus)
 
         self.drawing_label.showEvent = self.update_drawing_surface
 
@@ -506,6 +533,7 @@ class DrawingWindow(QWidget):
                 if self.bucket_mode:
                     self.bucket_fill(event.pos() - self.drawing_label.pos())
                 else:
+                    self.save_state_for_undo()
                     self.last_point = event.pos() - self.drawing_label.pos()
 
     def mouseMoveEvent(self, event):
@@ -520,6 +548,17 @@ class DrawingWindow(QWidget):
         if event.button() == Qt.LeftButton:
             self.dragging = False
             self.last_point = None
+
+    def keyPressEvent(self, event):
+        if event.modifiers() == Qt.ControlModifier and event.key() == Qt.Key_Z:
+            self.undo()
+            event.accept()
+            return
+        if event.modifiers() == Qt.ControlModifier and (event.key() == Qt.Key_Y or event.key() == Qt.Key_Z and event.modifiers() & Qt.ShiftModifier):
+            self.redo()
+            event.accept()
+            return
+        super().keyPressEvent(event)
 
     def update_drawing_surface(self, event):
         if self.pixmap.size() != self.drawing_label.size():
@@ -558,10 +597,41 @@ class DrawingWindow(QWidget):
 
     def clear_drawing(self):
         if not self.pixmap.isNull():
+            self.save_state_for_undo()
             self.pixmap.fill(Qt.transparent)
             self.drawing_label.setPixmap(self.pixmap)
 
+    def save_state_for_undo(self):
+        if self.pixmap.isNull():
+            return
+        self.history.append(self.pixmap.copy())
+        if len(self.history) > 100:
+            self.history.pop(0)
+        self.future.clear()
+        self.update_undo_redo_buttons()
+
+    def update_undo_redo_buttons(self):
+        self.undo_button.setEnabled(len(self.history) > 0)
+        self.redo_button.setEnabled(len(self.future) > 0)
+
+    def undo(self):
+        if not self.history:
+            return
+        self.future.append(self.pixmap.copy())
+        self.pixmap = self.history.pop()
+        self.drawing_label.setPixmap(self.pixmap)
+        self.update_undo_redo_buttons()
+
+    def redo(self):
+        if not self.future:
+            return
+        self.history.append(self.pixmap.copy())
+        self.pixmap = self.future.pop()
+        self.drawing_label.setPixmap(self.pixmap)
+        self.update_undo_redo_buttons()
+
     def bucket_fill(self, pos):
+        self.save_state_for_undo()
         QApplication.setOverrideCursor(Qt.WaitCursor)
         try:
             x, y = int(pos.x()), int(pos.y())
