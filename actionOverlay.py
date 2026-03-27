@@ -3,7 +3,7 @@ import os
 import pyautogui
 import win32gui
 import win32con
-from PyQt5.QtCore import Qt, QPoint, QRect, QObject
+from PyQt5.QtCore import Qt, QPoint, QRect, QSize, QObject
 from PyQt5.QtWidgets import QSlider
 import datetime
 from PyQt5.QtWidgets import QFileDialog
@@ -11,7 +11,7 @@ from PyQt5.QtCore import QTimer
 from notifypy import Notify
 from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QVBoxLayout, 
                             QHBoxLayout, QLabel, QSizePolicy, QSizeGrip)
-from PyQt5.QtGui import (QCursor, QFont, QPainter, QPen, QColor, QPixmap, 
+from PyQt5.QtGui import (QCursor, QFont, QPainter, QPen, QColor, QPixmap, /
                          QMouseEvent, QPaintEvent, QIcon)
 
 class DraggableButton(QPushButton):
@@ -343,6 +343,17 @@ class DrawingWindow(QWidget):
         self.history = []
         self.future = []
 
+        self.active_image = None
+        self.active_image_original = None
+        self.active_image_pos = QPoint(0, 0)
+        self.active_image_rect = QRect()
+        self.active_image_dragging = False
+        self.active_image_resizing = False
+        self.active_image_resize_handle = None
+        self.active_image_drag_offset = QPoint(0, 0)
+        self.current_mouse_pos = QPoint(0, 0)
+        self.active_image_current_size = QSize()
+
         self.dragging = False
         self.offset = QPoint()
 
@@ -530,17 +541,95 @@ class DrawingWindow(QWidget):
                     self.dragging = True
                     self.offset = event.pos()
             elif self.drawing_label.underMouse():
+                click_pos = event.pos() - self.drawing_label.pos()
+                if self.active_image is not None and not self.active_image_rect.isNull():
+                    # Create expanded detection rect to include handle areas
+                    detection_half = 20  # Half of detection_size
+                    detection_rect = self.active_image_rect.adjusted(-detection_half, -detection_half, detection_half, detection_half)
+                    
+                    if detection_rect.contains(click_pos):
+                        handle = self.get_active_image_handle(click_pos)
+                        if handle:
+                            self.active_image_resizing = True
+                            self.active_image_resize_handle = handle
+                        else:
+                            self.active_image_dragging = True
+                            self.active_image_drag_offset = click_pos - self.active_image_pos
+                        return
+                    else:
+                        self.commit_active_image()
+                        return
+
                 if self.bucket_mode:
-                    self.bucket_fill(event.pos() - self.drawing_label.pos())
+                    self.bucket_fill(click_pos)
                 else:
                     self.save_state_for_undo()
-                    self.last_point = event.pos() - self.drawing_label.pos()
+                    self.last_point = click_pos
 
     def mouseMoveEvent(self, event):
         if self.dragging:
             self.move(event.globalPos() - self.offset)
-        elif self.last_point is not None and event.buttons() & Qt.LeftButton:
-            current_point = event.pos() - self.drawing_label.pos()
+            return
+
+        cursor_pos = event.pos() - self.drawing_label.pos()
+        self.current_mouse_pos = cursor_pos
+
+        if not (event.buttons() & Qt.LeftButton):
+            self.update_cursor_for_position(cursor_pos)
+            self.update_canvas_display()
+
+        if self.active_image is not None and event.buttons() & Qt.LeftButton:
+            if self.active_image_resizing and self.active_image_resize_handle and self.active_image_original is not None:
+                rect = self.active_image_rect
+                fixed = QPoint()
+
+                if self.active_image_resize_handle == 'br':
+                    fixed = rect.topLeft()
+                elif self.active_image_resize_handle == 'bm':
+                    fixed = rect.topLeft()
+                elif self.active_image_resize_handle == 'rm':
+                    fixed = rect.topLeft()
+
+                width = max(20, abs(cursor_pos.x() - fixed.x()))
+                height = max(20, abs(cursor_pos.y() - fixed.y()))
+
+                if self.active_image_resize_handle == 'bm':
+                    # Vertical stretch: keep width, change height
+                    width = rect.width()
+                elif self.active_image_resize_handle == 'rm':
+                    # Horizontal stretch: keep height, change width
+                    height = rect.height()
+
+                new_size = self.active_image_original.size()
+                new_size.scale(width, height, Qt.KeepAspectRatio if self.active_image_resize_handle == 'br' else Qt.IgnoreAspectRatio)
+
+                scaled = self.active_image_original.scaled(new_size, Qt.KeepAspectRatio if self.active_image_resize_handle == 'br' else Qt.IgnoreAspectRatio, Qt.SmoothTransformation)
+                if not scaled.isNull():
+                    self.active_image = scaled
+                    # Update current size for subsequent resizes
+                    self.active_image_current_size = scaled.size()
+                    new_w = scaled.width()
+                    new_h = scaled.height()
+
+                    if self.active_image_resize_handle == 'br':
+                        self.active_image_pos = fixed
+                    elif self.active_image_resize_handle == 'bm':
+                        self.active_image_pos = QPoint(rect.left(), fixed.y())
+                    elif self.active_image_resize_handle == 'rm':
+                        self.active_image_pos = QPoint(fixed.x(), rect.top())
+
+                    self.update_active_image_rect()
+                    self.update_canvas_display()
+                return
+
+            if self.active_image_dragging:
+                self.active_image_pos = cursor_pos - self.active_image_drag_offset
+                self.update_active_image_rect()
+                self.update_canvas_display()
+                return
+
+        if self.last_point is not None and event.buttons() & Qt.LeftButton and not self.active_image:
+            current_point = cursor_pos
             self.draw_line(self.last_point, current_point)
             self.last_point = current_point
 
@@ -548,16 +637,30 @@ class DrawingWindow(QWidget):
         if event.button() == Qt.LeftButton:
             self.dragging = False
             self.last_point = None
+            if self.active_image_dragging:
+                self.active_image_dragging = False
+            if self.active_image_resizing:
+                self.active_image_resizing = False
+                self.active_image_resize_handle = None
 
     def keyPressEvent(self, event):
-        if event.modifiers() == Qt.ControlModifier and event.key() == Qt.Key_Z:
-            self.undo()
-            event.accept()
-            return
-        if event.modifiers() == Qt.ControlModifier and (event.key() == Qt.Key_Y or event.key() == Qt.Key_Z and event.modifiers() & Qt.ShiftModifier):
-            self.redo()
-            event.accept()
-            return
+        if event.modifiers() & Qt.ControlModifier:
+            if event.key() == Qt.Key_Z:
+                self.undo()
+                event.accept()
+                return
+            if event.key() == Qt.Key_Y or (event.key() == Qt.Key_Z and event.modifiers() & Qt.ShiftModifier):
+                self.redo()
+                event.accept()
+                return
+            if event.key() == Qt.Key_V:
+                clipboard = QApplication.clipboard()
+                if clipboard.mimeData().hasImage():
+                    image = clipboard.pixmap()
+                    if not image.isNull():
+                        self.set_active_image(image)
+                        event.accept()
+                        return
         super().keyPressEvent(event)
 
     def update_drawing_surface(self, event):
@@ -571,8 +674,8 @@ class DrawingWindow(QWidget):
                 painter.end()
             
             self.pixmap = new_pixmap
-            self.drawing_label.setPixmap(self.pixmap)
-        
+
+        self.update_canvas_display()
         event.accept()
         
     def resizeEvent(self, event):
@@ -593,13 +696,19 @@ class DrawingWindow(QWidget):
                 painter.setPen(self.pen)
             painter.drawLine(from_point, to_point)
             painter.end()
-            self.drawing_label.setPixmap(self.pixmap)
+            self.update_canvas_display()
 
     def clear_drawing(self):
         if not self.pixmap.isNull():
             self.save_state_for_undo()
             self.pixmap.fill(Qt.transparent)
-            self.drawing_label.setPixmap(self.pixmap)
+            self.active_image = None
+            self.active_image_original = None
+            self.active_image_rect = QRect()
+            self.active_image_dragging = False
+            self.active_image_resizing = False
+            self.active_image_resize_handle = None
+            self.update_canvas_display()
 
     def save_state_for_undo(self):
         if self.pixmap.isNull():
@@ -627,8 +736,122 @@ class DrawingWindow(QWidget):
             return
         self.history.append(self.pixmap.copy())
         self.pixmap = self.future.pop()
-        self.drawing_label.setPixmap(self.pixmap)
+        self.update_canvas_display()
         self.update_undo_redo_buttons()
+
+    def get_display_pixmap(self):
+        display = self.pixmap.copy()
+        if self.active_image is not None and not self.active_image.isNull():
+            painter = QPainter(display)
+            if painter.isActive():
+                painter.drawPixmap(self.active_image_pos, self.active_image)
+
+                # Determine colors based on mouse position
+                mouse_inside = self.active_image_rect.contains(self.current_mouse_pos)
+                outline_color = QColor(0, 122, 255) if mouse_inside else QColor(255, 255, 255)  # Blue if inside, white otherwise
+                handle_color = outline_color
+
+                pen = QPen(outline_color, 2, Qt.SolidLine)
+                painter.setPen(pen)
+                painter.drawRect(self.active_image_rect)
+
+                handle_size = 16
+                handle_half = handle_size // 2
+
+                # Bottom-right handle
+                br = self.active_image_rect.bottomRight()
+                br_rect = QRect(br.x() - handle_half, br.y() - handle_half, handle_size, handle_size)
+                hover_br = br_rect.contains(self.current_mouse_pos)
+                painter.fillRect(br_rect, handle_color if not hover_br else QColor(0, 100, 200))  # Darker blue on hover
+
+                # Bottom-middle handle (vertical stretch)
+                bm = QPoint(self.active_image_rect.center().x(), self.active_image_rect.bottom())
+                bm_rect = QRect(bm.x() - handle_half, bm.y() - handle_half, handle_size, handle_size)
+                hover_bm = bm_rect.contains(self.current_mouse_pos)
+                painter.fillRect(bm_rect, handle_color if not hover_bm else QColor(0, 100, 200))
+
+                # Right-middle handle (horizontal stretch)
+                rm = QPoint(self.active_image_rect.right(), self.active_image_rect.center().y())
+                rm_rect = QRect(rm.x() - handle_half, rm.y() - handle_half, handle_size, handle_size)
+                hover_rm = rm_rect.contains(self.current_mouse_pos)
+                painter.fillRect(rm_rect, handle_color if not hover_rm else QColor(0, 100, 200))
+
+            painter.end()
+        return display
+
+    def update_canvas_display(self):
+        self.drawing_label.setPixmap(self.get_display_pixmap())
+
+    def update_active_image_rect(self):
+        if self.active_image is not None:
+            self.active_image_rect = QRect(self.active_image_pos, self.active_image.size())
+
+    def set_active_image(self, pixmap):
+        if pixmap is None or pixmap.isNull():
+            return
+        self.active_image_original = pixmap
+        self.active_image = pixmap.copy()
+        self.active_image_current_size = pixmap.size()
+        self.active_image_pos = QPoint(
+            max(0, (self.drawing_label.width() - self.active_image.width()) // 2),
+            max(0, (self.drawing_label.height() - self.active_image.height()) // 2)
+        )
+        self.update_active_image_rect()
+        self.update_canvas_display()
+
+    def commit_active_image(self):
+        if self.active_image is None:
+            return
+        self.save_state_for_undo()
+        painter = QPainter(self.pixmap)
+        if painter.isActive():
+            painter.drawPixmap(self.active_image_pos, self.active_image)
+            painter.end()
+        self.active_image = None
+        self.active_image_original = None
+        self.active_image_rect = QRect()
+        self.active_image_dragging = False
+        self.active_image_resizing = False
+        self.active_image_resize_handle = None
+        self.update_canvas_display()
+
+    def get_active_image_handle(self, pos):
+        if self.active_image_rect.isNull():
+            return None
+        handle_size = 16  # Display size
+        detection_size = 40  # Even larger for easier clicking
+        detection_half = detection_size // 2
+
+        # Bottom-right handle
+        br = self.active_image_rect.bottomRight()
+        br_rect = QRect(br.x() - detection_half, br.y() - detection_half, detection_size, detection_size)
+        if br_rect.contains(pos):
+            return 'br'
+
+        # Bottom-middle handle (vertical stretch)
+        bm = QPoint(self.active_image_rect.center().x(), self.active_image_rect.bottom())
+        bm_rect = QRect(bm.x() - detection_half, bm.y() - detection_half, detection_size, detection_size)
+        if bm_rect.contains(pos):
+            return 'bm'
+
+        # Right-middle handle (horizontal stretch)
+        rm = QPoint(self.active_image_rect.right(), self.active_image_rect.center().y())
+        rm_rect = QRect(rm.x() - detection_half, rm.y() - detection_half, detection_size, detection_size)
+        if rm_rect.contains(pos):
+            return 'rm'
+
+        return None
+
+    def update_cursor_for_position(self, pos):
+        if self.active_image is not None and not self.active_image_rect.isNull():
+            handle = self.get_active_image_handle(pos)
+            if handle == 'br':
+                self.setCursor(Qt.SizeFDiagCursor)
+                return
+            if self.active_image_rect.contains(pos):
+                self.setCursor(Qt.SizeAllCursor)
+                return
+        self.setCursor(Qt.ArrowCursor)
 
     def bucket_fill(self, pos):
         self.save_state_for_undo()
@@ -651,7 +874,7 @@ class DrawingWindow(QWidget):
 
             self.perform_fill(image, x, y, target_color, fill_color)
             self.pixmap.convertFromImage(image)
-            self.drawing_label.setPixmap(self.pixmap)
+            self.update_canvas_display()
         finally:
             QApplication.restoreOverrideCursor()
 
