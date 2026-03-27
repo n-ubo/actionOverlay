@@ -16,3 +16,15 @@
 ### TODO
 - add undo, redo buttons to draw window
 - split up the main source .py file to smaller files
+
+## dev
+run
+> py actionOverlay.py
+
+to test any code changes
+
+run
+
+> pyinstaller --onefile --windowed --icon=app_icon.ico actionOverlay.py
+
+to build any code changes towards the original .exe

@@ -136,7 +136,7 @@ class DrawingWindow(QWidget):
             ("#FFFFFF", "white"),
             ("#000000", "black"),
         ]
-        self.pen = QPen(QColor(255, 255, 255), 3, Qt.SolidLine, Qt.RoundCap, Qt.RoundJoin)
+        self.pen = QPen(QColor("#F44336"), 3, Qt.SolidLine, Qt.RoundCap, Qt.RoundJoin)
 
         def make_color_btn(color, tooltip):
             btn = QPushButton()
@@ -177,6 +177,7 @@ class DrawingWindow(QWidget):
         self.thickness_slider.setValue(3)
         self.thickness_slider.setFixedWidth(100)
         self.thickness_slider.setToolTip("Pen thickness")
+        self.set_pen_color("#F44336")
         self.thickness_slider.setStyleSheet("""
             QSlider::groove:horizontal {
                 border: 1px solid #444;
@@ -282,6 +283,8 @@ class DrawingWindow(QWidget):
         self.drawing_label = QLabel(self)
         self.drawing_label.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         self.drawing_label.setStyleSheet("background-color: rgba(30, 30, 30, 20);")
+        self.drawing_label.setMouseTracking(True)
+        self.setMouseTracking(True)
         layout.addWidget(self.drawing_label)
 
         self.pixmap = QPixmap(1, 1)
@@ -457,7 +460,10 @@ class DrawingWindow(QWidget):
         if sender:
             sender.setChecked(True)
         self.pen.setColor(QColor(color))
-        self.pen.setWidth(self.thickness_slider.value())
+        if hasattr(self, 'thickness_slider') and self.thickness_slider is not None:
+            self.pen.setWidth(self.thickness_slider.value())
+        else:
+            self.pen.setWidth(self.pen.width() if self.pen.width() > 0 else 3)
 
     def set_pen_thickness(self, value):
         self.pen.setWidth(value)
@@ -725,6 +731,22 @@ class DrawingWindow(QWidget):
                 painter.fillRect(rm_rect, handle_color if not hover_rm else QColor(0, 100, 200))
 
             painter.end()
+
+        # Draw cursor preview circle showing current pencil thickness
+        if 0 <= self.current_mouse_pos.x() < self.drawing_label.width() and 0 <= self.current_mouse_pos.y() < self.drawing_label.height():
+            painter = QPainter(display)
+            if painter.isActive():
+                preview_color = self.pen.color() if self.pen is not None else QColor(255, 255, 255)
+                preview_pen = QPen(QColor(preview_color.red(), preview_color.green(), preview_color.blue(), 190), 1, Qt.SolidLine)
+                preview_pen.setCosmetic(True)
+                painter.setPen(preview_pen)
+
+                thickness = max(1, self.pen.width())
+                radius = max(1, int(thickness / 2))
+                painter.drawEllipse(self.current_mouse_pos, radius, radius)
+
+            painter.end()
+
         return display
 
     def update_canvas_display(self):
