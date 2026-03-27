@@ -11,7 +11,7 @@ from PyQt5.QtCore import QTimer
 from notifypy import Notify
 from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QVBoxLayout, 
                             QHBoxLayout, QLabel, QSizePolicy, QSizeGrip)
-from PyQt5.QtGui import (QCursor, QFont, QPainter, QPen, QColor, QPixmap, /
+from PyQt5.QtGui import (QCursor, QFont, QPainter, QPen, QColor, QPixmap, 
                          QMouseEvent, QPaintEvent, QIcon)
 
 class DraggableButton(QPushButton):
@@ -600,14 +600,12 @@ class DrawingWindow(QWidget):
                     # Horizontal stretch: keep height, change width
                     height = rect.height()
 
-                new_size = self.active_image_original.size()
+                new_size = self.active_image_current_size
                 new_size.scale(width, height, Qt.KeepAspectRatio if self.active_image_resize_handle == 'br' else Qt.IgnoreAspectRatio)
 
-                scaled = self.active_image_original.scaled(new_size, Qt.KeepAspectRatio if self.active_image_resize_handle == 'br' else Qt.IgnoreAspectRatio, Qt.SmoothTransformation)
+                scaled = self.active_image_original.scaled(new_size, Qt.IgnoreAspectRatio, Qt.SmoothTransformation)
                 if not scaled.isNull():
                     self.active_image = scaled
-                    # Update current size for subsequent resizes
-                    self.active_image_current_size = scaled.size()
                     new_w = scaled.width()
                     new_h = scaled.height()
 
@@ -642,6 +640,9 @@ class DrawingWindow(QWidget):
             if self.active_image_resizing:
                 self.active_image_resizing = False
                 self.active_image_resize_handle = None
+                # Update current size after resize completes
+                if self.active_image is not None:
+                    self.active_image_current_size = self.active_image.size()
 
     def keyPressEvent(self, event):
         if event.modifiers() & Qt.ControlModifier:
