@@ -12,10 +12,8 @@
 ### Usage
 - drag  ○  button to move overlay
 - ○  open/hide overlay
-
-### TODO
-- add undo, redo buttons to draw window
-- split up the main source .py file to smaller files
+- CTRL + Z/Y to undo or redo any actions on the drawing canvas
+- CTRL + V to paste image on drawing canvas
 
 ## dev
 run
